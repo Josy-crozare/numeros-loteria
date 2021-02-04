@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Consultar numero da loteria</title>
+</head>
+<body>
+	<div align="center">
+		<h1>Consultar numero da loteria</h1>
+		<br />
+		<form action="#" th:action="@{/recuperar}" th:object="${user}"
+			method="get">
+			<table>
+				<tr>
+					<td>Email:</td>
+					<td><input type="text" th:field="*{email}" /></td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<button type="submit">Recuperar</button>
+					</td>
+				</tr>
+			</table>
+		</form>
+		<br /> <br />
+		<table border="1">
+			<thead>
+				<tr>
+					<td>Numeros da loteria</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="user : ${listUsers}">
+					<td th:text="${user.numero}">Numeros da loteria</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>
